@@ -1,79 +1,558 @@
-# SoroPet Shop
+<div align="center">
 
-### [Tutorial Link](https://youtu.be/lG5mXJUWtiY)
+<img width="220" src="https://cdn-icons-png.flaticon.com/512/616/616408.png" />
 
-In this tutorial, I’ve built a fully functional Pet Shop application on the Stellar blockchain using Soroban smart contracts. The Pet Shop is a familiar concept for many developers, especially those coming from Ethereum’s ecosystem, but this tutorial reimagines it on the Stellar network using Soroban, a new smart contract platform. The application allows users to adopt and disown pets, with ownership stored on the blockchain. This tutorial guides developers step-by-step on how to create, deploy, and interact with smart contracts on Stellar using Rust & React providing a comprehensive introduction to building decentralized applications on Soroban.
+# 🐾 SoroPet Shop
 
-The Petshop contract contains three primary functions that manage pet adoption on the blockchain:
+### Plataforma descentralizada de adopción de mascotas sobre Stellar & Soroban ⚡
 
-1. **adopt_pet**: This function allows a user to adopt a pet by storing the adopter's address on the blockchain using the pet's unique ID.
-   
-2. **disown_pet**: This function enables a user to disown a pet, removing the ownership information from the blockchain for that specific pet ID.
+<p align="center">
+  <b>SoroPet Shop</b> es una aplicación blockchain construida sobre Stellar y Soroban que permite adoptar y liberar mascotas utilizando smart contracts descentralizados.
+</p>
 
-3. **get_pet_adopter**: This function retrieves the address of the current adopter for a given pet ID, allowing anyone to check the ownership status of a pet.
+<p align="center">
+  <img src="https://img.shields.io/badge/Stellar-Blockchain-7B61FF?style=for-the-badge&logo=stellar&logoColor=white">
+  <img src="https://img.shields.io/badge/Soroban-Smart_Contracts-000000?style=for-the-badge&logo=rust&logoColor=white">
+  <img src="https://img.shields.io/badge/React-Frontend-61DAFB?style=for-the-badge&logo=react&logoColor=black">
+  <img src="https://img.shields.io/badge/Rust-WebAssembly-FF6F00?style=for-the-badge&logo=rust&logoColor=white">
+</p>
 
-Additionally, the contract includes:
+<p align="center">
+  <a href="#-acerca-del-proyecto">Acerca</a> •
+  <a href="#-características">Características</a> •
+  <a href="#-tecnologías-utilizadas">Tecnologías</a> •
+  <a href="#-instalación">Instalación</a> •
+  <a href="#-vista-previa">Vista previa</a>
+</p>
 
-- **DataKey enum**: This defines a storage key in the contract, specifically used to map each pet's unique ID to its adopter's address on the blockchain. 
+</div>
 
-On the frontend, there are three primary functions that interact with the smart contract:
+---
 
-1. **fetchAllPetOwners()**: This function retrieves the current owner of each pet by invoking the `get_pet_adopter` method on the contract. It iterates through all the pets, fetches the adopter's address for each pet from the blockchain, and updates the state with this information.
+# 🌌 Acerca del proyecto
 
-2. **adoptPet()**: This function allows a user to adopt a pet by invoking the `adopt_pet` method on the contract. It sends the pet's ID and the user's address to the contract, storing the adoption on the blockchain. The function also handles state updates and user notifications.
+**SoroPet Shop** es una aplicación descentralizada (dApp) enfocada en la adopción de mascotas utilizando smart contracts sobre la blockchain de Stellar mediante Soroban.
 
-3. **disownPet()**: This function enables a user to disown a pet by invoking the `disown_pet` method on the contract. It sends the pet's ID to the contract, which then removes the adoption record from the blockchain. The function also manages state changes and user feedback.
+El sistema permite:
 
-## Setup
+- 🐶 Adoptar mascotas
+- 🐾 Liberar mascotas
+- 🔍 Consultar propietarios
+- 🌐 Interactuar con blockchain
+- ⚡ Gestionar ownership descentralizado
+- 🔒 Almacenar datos on-chain
+- 🧩 Ejecutar contratos inteligentes
 
-When deploying our contracts, you will need the secret key of the deployer account. This secret key will be stored in an ignored file located at `./contracts/.env`.
+La plataforma fue desarrollada con enfoque en:
 
-### Steps to Set Up Your Env
+- ⚡ Descentralización
+- 🌐 Blockchain moderna
+- 🔐 Seguridad on-chain
+- 🧩 Smart contracts Soroban
+- 🚀 Desarrollo Web3
+- 📱 Interfaces modernas
 
-1. Copy the example environment file:
-   ```bash
-   cp contracts/.env.example contracts/.env
-   ```
-   If you are already inside the `contracts` folder (e.g., inside the Docker Container), simply run:
-   ```bash
-   cp .env.example .env
-   ```
+---
 
-2. Edit the `.env` file, which will look like this:
-   ```bash
-   # Stellar accounts Secret Keys
-   ADMIN_SECRET_KEY=
+# ✨ Características
 
-   # RPC Setup
-   MAINNET_RPC_URL=
-   ```
+## 🐾 Sistema de adopción
 
-3. Generate new Accounts and Private Keys from [Stellar Laboratory](https://laboratory.stellar.org/#account-creator?network=test).
-4. Find a Mainnet RPC Provider from the [Ecosystem](https://developers.stellar.org/docs/data/rpc/rpc-providers)
+- 🐶 Adoptar mascotas
+- 🏠 Ownership descentralizado
+- ⚡ Registro inmediato on-chain
+- 🔒 Persistencia blockchain
+- 📋 Gestión de mascotas
 
+---
 
-### Deploy the Contract
+## ❌ Sistema de liberación
 
+- 🐾 Disown de mascotas
+- 🔄 Eliminación de ownership
+- ⚡ Actualización automática
+- 🌐 Persistencia distribuida
+
+---
+
+## 🔍 Consulta de propietarios
+
+- 📋 Visualización de dueños
+- 🔎 Consulta de adopciones
+- 🌐 Datos públicos blockchain
+- ⚡ Lectura on-chain
+
+---
+
+## 🌐 Integración Blockchain
+
+- ⭐ Stellar Network
+- 🧩 Soroban Smart Contracts
+- 🔗 Wallet interaction
+- ⚡ Smart contract execution
+- 🛡️ Datos descentralizados
+
+---
+
+## 🎨 Frontend interactivo
+
+- ⚛️ React Frontend
+- 📱 Responsive Design
+- 🔔 User Notifications
+- ⚡ Real-time updates
+- 🌐 Web3 interaction
+
+---
+
+# 👨‍💻 Módulos del sistema
+
+## 🧩 Smart Contract Module
+
+Contrato inteligente principal.
+
+### Funcionalidades:
+
+- 🐶 Adopt pets
+- ❌ Disown pets
+- 🔍 Query ownership
+- 📦 Blockchain storage
+- ⚡ Contract execution
+
+---
+
+## 🌐 Frontend Module
+
+Interfaz principal del usuario.
+
+### Funcionalidades:
+
+- 📋 Mostrar mascotas
+- 🔄 Actualizar estado
+- 🐾 Adoptar mascotas
+- ❌ Liberar mascotas
+- 🔔 Notificaciones
+
+---
+
+## 🔐 Blockchain Storage Module
+
+Módulo de persistencia on-chain.
+
+### Funcionalidades:
+
+- 📦 DataKey storage
+- 🔗 Mapping de owners
+- 🌐 Blockchain persistence
+- ⚡ Ownership registry
+
+---
+
+# 🛠️ Tecnologías utilizadas
+
+## ⚙️ Frontend
+
+<p>
+  <img src="https://skillicons.dev/icons?i=react,ts,js,html,css" />
+</p>
+
+- React
+- TypeScript
+- JavaScript
+- HTML5
+- CSS3
+- Responsive Design
+
+---
+
+## ⚙️ Backend & Blockchain
+
+<p>
+  <img src="https://skillicons.dev/icons?i=rust,nodejs" />
+</p>
+
+- Rust
+- Soroban SDK
+- Stellar SDK
+- Node.js
+- Smart Contracts
+
+---
+
+## 🗄️ Blockchain
+
+<p>
+  <img src="https://skillicons.dev/icons?i=rust" />
+</p>
+
+- Stellar Network
+- Soroban Smart Contracts
+- WebAssembly
+- Blockchain Storage
+- Decentralized Ownership
+
+---
+
+## 🧰 Herramientas
+
+<p>
+  <img src="https://skillicons.dev/icons?i=git,github,vscode,yarn,docker" />
+</p>
+
+- Git
+- GitHub
+- VS Code
+- Yarn
+- Docker
+- Soroban CLI
+
+---
+
+# 📂 Estructura del proyecto
 
 ```bash
-# move to the contracts folder
+SoroPet-Shop/
+│
+├── contracts/
+│   ├── src/
+│   ├── .env
+│   └── Cargo.toml
+├── frontend/
+├── components/
+├── public/
+├── docs/
+├── README.md
+└── LICENSE
+```
+
+---
+
+# 🏗️ Arquitectura del sistema
+
+## ⚡ Arquitectura general
+
+```text
+Usuario → React Frontend → Soroban Contract → Stellar Blockchain
+```
+
+---
+
+## 🔄 Flujo del sistema
+
+```text
+Usuario → Adoptar mascota → Smart Contract → Blockchain Storage
+```
+
+---
+
+# 📊 Requerimientos funcionales
+
+## 🐾 Funcionalidades principales
+
+- Adopción de mascotas
+- Liberación de mascotas
+- Consulta de propietarios
+- Smart contracts Soroban
+- Integración Stellar
+- Persistencia blockchain
+- Frontend React
+
+---
+
+# 🔐 Requerimientos no funcionales
+
+## ⚡ Calidad del sistema
+
+- 🌐 Descentralización
+- 🔒 Seguridad blockchain
+- ⚡ Respuesta rápida
+- 📈 Escalabilidad
+- 🛠️ Código mantenible
+- 📱 Compatibilidad multiplataforma
+
+---
+
+# ⚡ Instalación
+
+## 📋 Requisitos
+
+- Node.js
+- Yarn
+- Rust
+- Soroban CLI
+- Docker
+- Stellar Account
+- Git
+
+---
+
+# 🚀 Configuración del entorno
+
+## 1️⃣ Clonar repositorio
+
+```bash
+git clone https://github.com/isairey/SoroPet-Shop.git
+```
+
+---
+
+## 2️⃣ Configurar variables de entorno
+
+```bash
+cp contracts/.env.example contracts/.env
+```
+
+Si estás dentro de `contracts/`:
+
+```bash
+cp .env.example .env
+```
+
+---
+
+## 3️⃣ Editar archivo `.env`
+
+```env
+ADMIN_SECRET_KEY=
+MAINNET_RPC_URL=
+```
+
+---
+
+## 4️⃣ Generar cuentas Stellar
+
+Usar:
+
+```text
+https://laboratory.stellar.org
+```
+
+---
+
+## 5️⃣ Configurar RPC Provider
+
+Consultar:
+
+```text
+https://developers.stellar.org/docs/data/rpc/rpc-providers
+```
+
+---
+
+# 🦀 Deploy del contrato
+
+## ⚙️ Entrar a contracts
+
+```bash
 cd contracts
+```
 
-# build
+---
+
+## 🏗️ Build del contrato
+
+```bash
 make build
+```
 
-# Install dependencies and deploy the contract
+---
+
+## 📦 Instalar dependencias
+
+```bash
 yarn install
+```
+
+---
+
+## 🚀 Deploy en testnet
+
+```bash
 yarn deploy testnet petshop
 ```
 
-### Run the frontend
+---
+
+# 🌐 Ejecutar frontend
+
+## ⚡ Volver al directorio raíz
 
 ```bash
-# move to the parent folder
 cd ..
-# install the dependencies
-yarn
-# run the frontend in development mode
-yarn dev
+```
 
+---
+
+## 📦 Instalar dependencias
+
+```bash
+yarn
+```
+
+---
+
+## 🚀 Ejecutar aplicación
+
+```bash
+yarn dev
+```
+
+---
+
+# 📸 Vista previa
+
+## 🖥️ Funcionalidades blockchain
+
+<div align="center">
+
+### 🐾 Sistema de adopción
+<img src="https://images.unsplash.com/photo-1517849845537-4d257902454a?q=80&w=1400&auto=format&fit=crop" width="100%"/>
+
+### 🌐 Smart Contracts Soroban
+<img src="https://images.unsplash.com/photo-1639762681057-408e52192e55?q=80&w=1400&auto=format&fit=crop" width="100%"/>
+
+### ⚛️ Frontend React
+<img src="https://images.unsplash.com/photo-1555066931-4365d14bab8c?q=80&w=1400&auto=format&fit=crop" width="100%"/>
+
+### 🔗 Blockchain Ownership
+<img src="https://images.unsplash.com/photo-1620712943543-bcc4688e7485?q=80&w=1400&auto=format&fit=crop" width="100%"/>
+
+</div>
+
+---
+
+# 🧠 Funciones principales del contrato
+
+## 🐶 `adopt_pet`
+
+Permite adoptar una mascota almacenando el owner en blockchain.
+
+---
+
+## ❌ `disown_pet`
+
+Elimina el propietario de una mascota específica.
+
+---
+
+## 🔍 `get_pet_adopter`
+
+Consulta el propietario actual de una mascota.
+
+---
+
+# ⚛️ Funciones principales del frontend
+
+## 📋 `fetchAllPetOwners()`
+
+Obtiene todos los propietarios actuales desde blockchain.
+
+---
+
+## 🐾 `adoptPet()`
+
+Ejecuta adopciones desde React hacia Soroban.
+
+---
+
+## ❌ `disownPet()`
+
+Libera mascotas y actualiza el estado automáticamente.
+
+---
+
+# 🧠 Decisiones arquitectónicas
+
+## ☁️ Blockchain y descentralización
+
+- Arquitectura Web3
+- Smart contracts Soroban
+- Ownership descentralizado
+- Persistencia blockchain
+- Escalabilidad Stellar
+
+---
+
+## ⚙️ Stack tecnológico
+
+- React + TypeScript
+- Rust Smart Contracts
+- Soroban SDK
+- Stellar Blockchain
+- Arquitectura modular
+
+---
+
+# 🚧 Roadmap
+
+## 🔮 Próximas mejoras
+
+- 📱 Aplicación móvil
+- 🖼️ NFTs para mascotas
+- 🌐 Wallet integrations
+- 🤖 IA para adopciones
+- 📊 Dashboard analítico
+- 🔔 Notificaciones blockchain
+- ☁️ Deploy cloud
+- 🌍 Multi-chain support
+
+---
+
+# 🤝 Contribuciones
+
+Las contribuciones son bienvenidas ❤️
+
+## Cómo contribuir
+
+1. Fork del proyecto
+
+```bash
+git checkout -b feature/nueva-funcionalidad
+```
+
+2. Commit
+
+```bash
+git commit -m "✨ Nueva funcionalidad"
+```
+
+3. Push
+
+```bash
+git push origin feature/nueva-funcionalidad
+```
+
+4. Pull Request 🚀
+
+---
+
+# 👨‍💻 Desarrollador
+
+<div align="center">
+
+## Isai Reyes — Blockchain Full Stack Developer
+
+Desarrollador apasionado por Web3, blockchain y aplicaciones descentralizadas modernas 🚀
+
+</div>
+
+---
+
+# 🌟 Apoya el proyecto
+
+⭐ Dale una estrella  
+🍴 Haz fork  
+📢 Comparte el proyecto
+
+---
+
+# 📜 Licencia
+
+Proyecto open source enfocado en blockchain, Soroban y aplicaciones descentralizadas modernas.
+
+---
+
+<div align="center">
+
+### 🐾 SoroPet Shop — adopciones descentralizadas sobre Stellar ⚡
+
+</div>
