@@ -290,7 +290,7 @@ Usuario → Adoptar mascota → Smart Contract → Blockchain Storage
 ## 1️⃣ Clonar repositorio
 
 ```bash
-git clone https://github.com/isairey/SoroPet-Shop.git
+git clone https://github.com/isairey/PlataformaDesentralizadaMascotasStellar.git
 ```
 
 ---
