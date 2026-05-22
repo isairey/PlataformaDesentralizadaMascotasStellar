@@ -210,7 +210,7 @@ Módulo de persistencia on-chain.
 # 📂 Estructura del proyecto
 
 ```bash
-SoroPet-Shop/
+PlataformaDesentralizadaMascotasStellar/
 │
 ├── contracts/
 │   ├── src/
@@ -398,27 +398,7 @@ yarn dev
 
 ---
 
-# 📸 Vista previa
 
-## 🖥️ Funcionalidades blockchain
-
-<div align="center">
-
-### 🐾 Sistema de adopción
-<img src="https://images.unsplash.com/photo-1517849845537-4d257902454a?q=80&w=1400&auto=format&fit=crop" width="100%"/>
-
-### 🌐 Smart Contracts Soroban
-<img src="https://images.unsplash.com/photo-1639762681057-408e52192e55?q=80&w=1400&auto=format&fit=crop" width="100%"/>
-
-### ⚛️ Frontend React
-<img src="https://images.unsplash.com/photo-1555066931-4365d14bab8c?q=80&w=1400&auto=format&fit=crop" width="100%"/>
-
-### 🔗 Blockchain Ownership
-<img src="https://images.unsplash.com/photo-1620712943543-bcc4688e7485?q=80&w=1400&auto=format&fit=crop" width="100%"/>
-
-</div>
-
----
 
 # 🧠 Funciones principales del contrato
 
